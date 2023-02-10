@@ -13,20 +13,58 @@ while True:
         zipped=list(zip(english,russian))
         print(english)  
         print(russian) 
-    #elif v==1:
-    #    choice=input('in what language do you want to add a word to the database_? English>1: Russian>2: ') 
-    #    #amount,zipped=input('in what language do you want to add a word to the database_? English>1: Russian>2: ')
-    #    input_word(english,russian,zipped)
-     
-
     elif v=='1': 
         english,russian=input_word(english,russian) 
         print(english) 
         print(russian)
-    elif v=='2':  
+    elif v=='2':
+          
         save_to_file(english,'eng_file.txt') 
         save_to_file(russian,'rus_file.txt')
-    elif v=='3': 
-        word_transfer(english,russian)
+    elif v=='3':
+
+
+
+
+        with open('eng_file.txt','r', encoding='utf-8-sig') as name_file, open('rus_file.txt', 'r', encoding='utf-8-sig') as salary_file:
+            eng = map(str.rstrip, name_file)
+            rus = map(str.rstrip, salary_file)
+            data = dict(zip(eng, rus))
+            
+            n=input('what laguage? 1 Englis, 2 Russian')
+            if int(n)==1: 
+                word =input('English ')
+                if word in data.keys():
+                    print(f'word: {word} is found: {data[word]}')
+                if word not in data.keys():
+                    print('word is not found')
+                if word not in data.keys(): 
+                    print('would you like to input the word to the dictionary?:1 yes,2 no')
+                    c=input('')
+                    if c=='1':
+                           english,russian=input_word(english,russian) 
+                           print(english) 
+                           print(russian)
+                    elif c=='2':
+                        break
+            if int(n)==2:  
+                with open('eng_file.txt','r', encoding='utf-8-sig') as name_file, open('rus_file.txt', 'r', encoding='utf-8-sig') as salary_file: 
+                    eng = map(str.rstrip, name_file) 
+                    rus = map(str.rstrip, salary_file) 
+                    data = dict(zip(rus, eng))  
+                    word =input('Russian') 
+                    if word in data.keys():
+                            print(f'word: {word} is found: {data[word]}') 
+                    if word not in data.keys():
+                            print('word is not found')
+                    if word not in data.keys(): 
+                            print('would you like to input the word to the dictionary?:1 yes,2 no')
+                            c=input('')
+                            if c=='1':
+                                   english,russian=input_word(english,russian) 
+                                   print(english) 
+                                   print(russian)
+                            elif c=='2':
+                                break
 
 
