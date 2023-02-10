@@ -1,4 +1,6 @@
 
+
+
 def read_file(file:str)->list: 
 
     fail=open(file,'r', encoding='utf-8-sig') 
@@ -33,38 +35,6 @@ def input_word(e:list,r:list):
 
     return e,r 
 
-#def transfer(e:list):
-#    e=list(map(str, e)) 
-#    word=str(e) 
-#    n=e.count(word)
-#    pos=0
-#    for j in range(n): 
-#        ind=e.index(word, pos) 
-#        w=e[ind] 
-#        print(f'{w}') 
-#        pos=ind+1
-
-def word_transfer(e:list,l:list): 
-    n=input('Which laguage_? English>:1 Russian>:2')
-    if int(n)==1: 
-        e=list(map(str,e)) 
-        pos=0 
-        n=input('English:') 
-        ind=e.index(n,pos) 
-        n=print(l[ind]) 
-        pos=ind+1 
-       
-        
-
-    elif int(n)==2:  
-        l=list(map(str, l)) 
-        pos=0 
-        n=input('Russian:') 
-        ind=l.index(n, pos) 
-        n=print(e[ind]) 
-        pos=+1
-    #elif int(n) not in e and int(n) not in l: 
-    #    print('there is no such word in the dictionary ')
 
 
 
