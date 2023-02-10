@@ -21,7 +21,7 @@ def save_to_file(mas:list,file:str):
     f.close() 
 
 def input_word(e:list,r:list): 
-    n=int(input('what language_?')) 
+    n=int(input('what language_? 1 English, 2 Russian')) 
     if int(n)==1:
         english=input('English:') 
         e.append(english) 
@@ -34,6 +34,26 @@ def input_word(e:list,r:list):
         e.append(english) 
 
     return e,r 
+
+def fix_e(name:str,e:list):
+    v=e.count(name) 
+    v=input('enter word has to be fixed:') 
+    if v in name: 
+        fix_word=input('correction:') 
+        for n,i in enumerate(name): 
+            if i==v: 
+                name[n]=fix_word
+                print('fixed:\n{0}'.format(name))
+
+def fix_r(name:str,r:list): 
+    v=r.count(name) 
+    v=input('enter word has to be fixed:')
+    if v in name: 
+        fix_word=input('correction:')
+        for f,j in enumerate(name): 
+            if j==v: 
+                name[f]=fix_word
+                print('fixed:\n{0}'.format(name))
 
 
 
