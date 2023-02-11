@@ -74,8 +74,6 @@ while True:
             fix_e(english,russian) 
         elif c=='2': 
             fix_r(russian,english) 
-    elif v=='5': 
-        for i in range(4):
-            control_word(english,russian) 
-
+    elif v=='5':  
+        control_word(english,russian) 
 
