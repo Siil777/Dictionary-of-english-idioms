@@ -43,8 +43,10 @@ def fix_e(name:str,e:list):
         fix_word=input('correction:') 
         for n,i in enumerate(name): 
             if i==v: 
-                name[n]=fix_word
-                print('fixed:\n{0}'.format(name))
+                name[n]=fix_word 
+                for j,n in zip(name,e): 
+                    print(f'{j} / {n}')
+                #print('fixed:\n{0}'.format(name))
 
 def fix_r(name:str,r:list): 
     v=r.count(name) 
@@ -54,25 +56,30 @@ def fix_r(name:str,r:list):
         for f,j in enumerate(name): 
             if j==v: 
                 name[f]=fix_word
-                print('fixed:\n{0}'.format(name)) 
+                for e,n in zip(name,r): 
+                    print(f'{e} / {n}')
+                #print('fixed:\n{0}'.format(name)) 
 
 def control_word(e:list,r:list):
+    ru=0 
+    en=0
     eng=list(map(str,e)) 
     eng=random.choice(eng) 
     print(eng)  
     rus=list(map(str,r)) 
-    while True: 
-        answ=input('word:') 
+   
+    while True:
+        answ=input('word:')  
+        ru+=1
         if answ in rus: 
-            print('right') 
-        else: 
-            print('wrong') 
+                    print('right') 
+                    en+=1
+        if answ not in rus:
+                    print('wrong') 
+                    
+                  
+  
         return e,r
-
-
-
-
-    
 
 
 
