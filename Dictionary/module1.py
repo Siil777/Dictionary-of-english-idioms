@@ -3,6 +3,11 @@ import random
 
 
 def read_file(file:str)->list: 
+    """read file
+    :param str file: file name
+    :param list mas: list
+
+    """
 
     fail=open(file,'r', encoding='utf-8-sig') 
     mas=[] 
@@ -15,6 +20,10 @@ def read_file(file:str)->list:
     return mas 
 
 def save_to_file(mas:list,file:str): 
+    """save list to file
+    :param str file: file name
+    :param list mas: list
+    """
 
     f=open(file,'w', encoding='utf-8-sig') 
     for item in mas: 
@@ -22,6 +31,10 @@ def save_to_file(mas:list,file:str):
     f.close() 
 
 def input_word(e:list,r:list): 
+    """ input words English or Russian to list to save
+    :param English list: list
+    :param Eussian list: list
+    """
     n=int(input('what language_? 1 English, 2 Russian')) 
     if int(n)==1:
         english=input('English:') 
@@ -37,6 +50,10 @@ def input_word(e:list,r:list):
     return e,r 
 
 def fix_e(name:str,e:list):
+    """ opportunity for a user to fix a word in English provided it was noticed.
+    :param name str: 
+    param English list:
+    """
     v=e.count(name) 
     v=input('enter word has to be fixed:') 
     if v in name: 
@@ -49,6 +66,11 @@ def fix_e(name:str,e:list):
                 #print('fixed:\n{0}'.format(name))
 
 def fix_r(name:str,r:list): 
+    """ opportunity for a user to fix a word in Russian
+    provided it was noticed.
+    :param name str: 
+    param Russian list:
+    """
     v=r.count(name) 
     v=input('enter word has to be fixed:')
     if v in name: 
@@ -61,6 +83,10 @@ def fix_r(name:str,r:list):
                 #print('fixed:\n{0}'.format(name)) 
 
 def control_word(e:list,r:list):
+    """ kind of a test as long as a user wish to check skills
+    :param English list:
+    :param Russian list:
+    """
     ru=0 
     en=0
     try:
