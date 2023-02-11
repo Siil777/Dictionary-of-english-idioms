@@ -1,9 +1,8 @@
 from module1 import* 
 
-
 while True: 
     print('----------------------------------------')
-    print('\n0 read file\n1 input words\n2 save words to dictionary\n3 translate word/find word\n4 fix_word') 
+    print('\n0 read file\n1 input words\n2 save words to dictionary\n3 translate word/find word\n4 fix_word\n5 test') 
     v=input('>>:')
     if v=='0': 
         english=[] 
@@ -74,6 +73,8 @@ while True:
         if c=='1': 
             fix_e(english,russian) 
         elif c=='2': 
-            fix_r(russian,english)
+            fix_r(russian,english) 
+    elif v=='5': 
+        control_word(english,russian) 
 
 
