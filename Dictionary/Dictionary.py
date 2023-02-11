@@ -70,10 +70,13 @@ while True:
                                 break
     elif v=='4':
         c=input('in which language the word should be corrected? 1 English,2 Russian ') 
-        if c=='1': 
-            fix_e(english,russian) 
-        elif c=='2': 
-            fix_r(russian,english) 
+        try:
+            if c=='1': 
+                fix_e(english,russian) 
+            if c=='2': 
+                fix_r(russian,english) 
+        except:
+            print('Error')
     elif v=='5':  
         control_word(english,russian) 
 
