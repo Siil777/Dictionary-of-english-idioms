@@ -83,7 +83,7 @@ def fix_r(name:str,r:list):
                 #print('fixed:\n{0}'.format(name)) 
 
 def control_word(e:list,r:list):
-    """ kind of a test as long as a user wish to check skills
+    """ kind of a test as long as a user wishes to have a tiger by the tail
     :param English list:
     :param Russian list:
     """
