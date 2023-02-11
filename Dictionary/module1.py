@@ -1,4 +1,5 @@
-
+from random import*
+import random 
 
 
 def read_file(file:str)->list: 
@@ -53,8 +54,20 @@ def fix_r(name:str,r:list):
         for f,j in enumerate(name): 
             if j==v: 
                 name[f]=fix_word
-                print('fixed:\n{0}'.format(name))
+                print('fixed:\n{0}'.format(name)) 
 
+def control_word(e:list,r:list):
+    eng=list(map(str,e)) 
+    eng=random.choice(eng) 
+    print(eng)  
+    rus=list(map(str,r)) 
+    while True: 
+        answ=input('word:') 
+        if answ in rus: 
+            print('right') 
+        else: 
+            print('wrong') 
+        return e,r
 
 
 
