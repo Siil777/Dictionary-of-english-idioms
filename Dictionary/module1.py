@@ -56,27 +56,48 @@ def fix_r(name:str,r:list):
         for f,j in enumerate(name): 
             if j==v: 
                 name[f]=fix_word
-                for e,n in zip(name,r): 
-                    print(f'{e} / {n}')
+                for t,c in zip(name,r): 
+                    print(f'{t} / {c}')
                 #print('fixed:\n{0}'.format(name)) 
 
 def control_word(e:list,r:list):
     ru=0 
     en=0
-    eng=list(map(str,e)) 
-    eng=random.choice(eng) 
-    print(eng)  
-    rus=list(map(str,r)) 
-   
-    while True:
-        answ=input('word:')  
-        ru+=1
-        if answ in rus: 
-                    print('right') 
-                    en+=1
-        if answ not in rus:
-                    print('wrong') 
-                    
+    try:
+        
+        for i in range(4): 
+            eng=list(map(str,e)) 
+            eng=random.choice(eng) 
+            print(eng)  
+            rus=list(map(str,r)) 
+
+            answ=input('word:')  
+            
+        
+            if answ in rus: 
+                print('right') 
+                en+=1
+            if answ not in rus: 
+                print('wrong') 
+            ru+=1
+        
+        p=en/ru*100
+        print(f'point is {p}')
+        try: 
+            p=en/ru*100 
+        except:
+            print("") 
+        if p<=59: 
+            mark="your mark is 2" 
+        elif p>=60 and p<=74:  
+            mark="your mark is 3" 
+        elif p>=75 and p<=89: 
+            mark="your mark is 4" 
+        else: 
+            mark="your mark is 5"
+            print(mark)
+        
+    except ZeroDivisionError:
                   
   
         return e,r
