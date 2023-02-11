@@ -95,7 +95,7 @@ def control_word(e:list,r:list):
             mark="your mark is 4" 
         else: 
             mark="your mark is 5"
-            print(mark)
+        print(mark)
         
     except ZeroDivisionError:
                   
