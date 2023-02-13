@@ -26,9 +26,9 @@ while True:
 
 
 
-        with open('eng_file.txt','r', encoding='utf-8-sig') as rus_file, open('rus_file.txt', 'r', encoding='utf-8-sig') as eng_file:
-            eng = map(str.rstrip, rus_file)
-            rus = map(str.rstrip, eng_file)
+        with open('eng_file.txt','r', encoding='utf-8-sig') as eng_file, open('rus_file.txt', 'r', encoding='utf-8-sig') as rus_file:
+            eng = map(str.rstrip, eng_file)
+            rus = map(str.rstrip, rus_file)
             
 
             data = dict(zip(eng, rus))
